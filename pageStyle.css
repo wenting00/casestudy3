@@ -1,0 +1,79 @@
+body {background-color: #e2d2b0;
+        margin: 100px;
+        }
+    #wrapper {background-color: #d0b48c; 
+                color: #442926;
+                width: 20%;
+                margin:auto;
+                min-width:850px;
+             }
+
+  #wrapper header{
+    text-align: center;
+  }
+    #leftcolumn {margin-left: 00px;
+                
+        position: relative;
+                padding: 5px 10px 10px 20px;
+                width: 100px;
+                float: left;
+                font-weight: bold;
+                background-color: #FAFAD2;
+                }
+    #leftcolumn #musicpage{
+        height:238px;
+    }
+
+    #leftcolumn #jobspage{
+        height:238px;
+    }
+
+    #leftcolumn #menupage{
+        height:238px;
+    }
+
+
+    nav ul { list-style-type: none;
+            }
+    nav a {text-decoration: none;
+            }
+    #rightcolumn {margin-left: 130px;
+                background-color: #f5f5dd;
+                padding: 5px 10px 10px 20px;
+                } 
+    #rightcolumn ul{  list-style-type: none;     /*https://www.w3schools.com/howto/howto_css_bullet_color.asp */
+                     }
+   #rightcolumn ul li::before{ content: "\2022"; 
+                    color: #A0522D;
+                    display: inline-block;
+                    width: 1em; 
+        margin-left: -1em;}
+    
+    .image {float: left;
+            margin-left: 25px;
+            }
+    .content {margin-left: 340px;
+            }
+    
+    
+    a:link {color: #8B4513;  /*https://www.quackit.com/css/css_color_codes.cfm */
+    }
+    a:visited,
+    a:hover {
+        color: #F4A460;
+    }
+    a:active {
+        background: #F4A460;
+        color: white;
+    }
+        
+    p {margin-left: 25px;
+            }
+    footer {font-size: 70%;
+                font-style: italic;
+                text-align: center;
+                background-color: #d0b48c;
+                color: #000000;
+                background-repeat: no-repeat;
+                padding: 15px;
+                }

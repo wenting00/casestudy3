@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaJam Coffee House </title>
+<script type = "text/javascript"  src = "checkName.js" ></script>
+
+<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="pageStyle.css"/>
+    <link rel="stylesheet" href="jobFormStyle.css">
+
+    <style>
+    #rightcolumn {
+      margin-left: 130px;
+      background-color: #f5f5dd;
+      padding: 5px 10px 10px 10px;
+      text-align: left;
+      } 
+    </style>
+    <!-- Script for registering the event handlers  -->
+    <script type = "text/javascript">
+      // document.write("Started executing JS! ");
+
+      //these validation functions return true if validation passes. vice versa.
+      function validateName(){
+        var name = document.getElementById('formName').value;
+        alert("Validating name!: " + name);
+        var regexReq = /[A-za-z -][^0-9]$/g;
+        var regexresult = name.test(regexReq);
+        alert("Finished validating regex");
+      }
+
+      function validateEmail(){
+        alert("Validating email!");
+        var regexReq  = new RegExp("@(?=[\w]-\.).*\.(?=[\w])", "g");
+        alert("Email validation result: " + emailaddress.test(regexReq));
+        return emailaddress.test(regexReq);
+      }
+
+      function validateDate(){
+        var now = new Date();
+        var dateOfStart = document.getElementById("formDate").value;
+
+        //check based on year
+        if (dateOfStart.getFullYear()>now.getFullYear()){
+          return true;
+        }
+        else if(dateOfStart.getFullYear()<now.getFullYear()){
+          return false;
+        }
+
+        //check based on month
+        if (dateOfStart.getMonth()>now.getMonth()){
+          return true;
+        }
+        else if(dateOfStart.getMonth()<now.getMonth()){
+          return false;
+        }
+
+        //check based on day
+        if (dateOfStart.getDay()>now.getDay()){
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+
+      function validateEverything(){
+        alert("testing validateEverything");
+        // alert("testing validateEverything");
+        // if(!validateName())
+        //   alert("Invalid name!");
+        // if(!validateEmail())
+        //   alert("Invalid email address!");
+        // if(!validateDate();)
+        //   alert("Invalid date!");
+        // alert(" loaded function validateEverything");
+
+
+      }
+    // document.write("Finished executing JS");
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <header style="text-align: center;">
+  <img src="header.jpg" alt="JavaJam Coffee House" width=53% height=53%>
+  </header>
+
+  <div id="leftcolumn" style="height:459px;">
+  <nav  >
+    <ul >
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="jobs.html" style="color:blue;">Jobs</a></li>
+	   </ul>
+  </nav>	
+  </div>
+
+<div id="rightcolumn">
+
+<h1 style="text-align: left;">Jobs at JavaJam</h1>
+
+Want to work at JavaJam? Fill out the form below to start your application. Required fields are marked with an asterisk *<br><br>
+
+<form id="jobForm" action="show_get.php" method="get">
+    <label for="name">*Name:</label>
+      <input type="text" name="myName" id="myName" required onblur="function(){
+          if(!validateName())
+            alert('Invalid email format!');
+        }"><br>   
+    <label for="email">*Email:</label>
+        <input type="email"name="email" id="email" required onblur="function(){
+          if(!validateEmail())
+            alert('Invalid email format!');
+        }"><br>
+    <label for="myDate">Date Start:</label>
+        <input type="date" name="myDate" id="myDate" onblur="function(){
+          if(!validateDate())
+            alert('Start date must start from at least tomorrow!');
+        }"><br>
+    <label for="experience">*State experience:</label>
+        <textarea id="experience" name="experience" required placeholder="Briefly describe your experience..." style="height:50px"></textarea><br><br>
+    <input type="submit" value="Apply Now"><br>
+          
+</form>
+
+<!-- Script for registering the event handlers  -->
+<script type = "text/javascript" >
+document.getElementById("jobForm").onsubmit = chkName;
+</script> 
+
+</div>
+
+<footer>
+<small><i>Copyright &copy;2019 JavaJam Coffee House </i></small><br>
+<a href="mailto:wenting@lim.com">wenting@lim.com</a>
+
+</footer>
+    
+</div>
+</body>
+
+</html>
+
+
