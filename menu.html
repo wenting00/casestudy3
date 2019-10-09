@@ -11,8 +11,7 @@
   }
 
   function updateTotal(){
-    // document.getElementById("totalPrice").value = parseFloat(document.getElementById('justJavaSubTotal').value) + parseFloat(document.getElementById('CafeAuLaitSubTotal').value) + parseFloat(document.getElementById('IcedCappuSubTotal').value);
-        document.getElementById("totalPrice").value = parseFloat("5.00");
+    document.getElementById("totalPrice").value = parseFloat(document.getElementById('justJavaSubTotal').value) + parseFloat(document.getElementById('CafeAuLaitSubTotal').value) + parseFloat(document.getElementById('IcedCappuSubTotal').value);
   }
   
   function updateSubTotal(buttonName, quantityID, subTotalID){
@@ -58,39 +57,39 @@
 <tr id="justJava">
 <td><strong>Just Java</strong></td>
 <td>Regular house blend, decaffeinated coffee, or flavor of the day. <br>
-<input type= "radio" name="justJavaBtn" value="2" onclick="updateSubTotal('justJavaBtn','justJavaQty','justJavaSubTotal');">
+<input type= "radio" name="justJavaBtn" value="2" onclick="updatePricings('justJavaBtn','justJavaQty','justJavaSubTotal');">
 Endless Cup $2.00</td>
-<td> <input type="text" id="justJavaQty" value="0" onblur="updateSubTotal('justJavaBtn','justJavaQty','justJavaSubTotal');" > </td>
-<td> <input type="text"  size = "5" value="0" id = "justJavaSubTotal" onfocus = "this.blur();"></td>
+<td> <input type="text" id="justJavaQty" value="0" onblur="updatePricings('justJavaBtn','justJavaQty','justJavaSubTotal');" > </td>
+<td> <input type="text"  size = "2" value="0" id = "justJavaSubTotal" onfocus = "this.blur();"></td>
 </tr>
 
 <tr id="CafeAuLait">
 <td><strong>Cafe au Lait</strong></td>
 <td>House blended coffee infused into a smooth, steamed milk. <br>
-<input type= "radio" name="CafeAuLaitBtn" value="2" onclick="updateSubTotal('CafeAuLaitBtn','CafeAuLaitQty','CafeAuLaitSubTotal');">
+<input type= "radio" name="CafeAuLaitBtn" value="2" onclick="updatePricings('CafeAuLaitBtn','CafeAuLaitQty','CafeAuLaitSubTotal');">
 Single $2.00
-<input type= "radio" name="CafeAuLaitBtn" value="3" onclick="updateSubTotal('CafeAuLaitBtn','CafeAuLaitQty','CafeAuLaitSubTotal');">
+<input type= "radio" name="CafeAuLaitBtn" value="3" onclick="updatePricings('CafeAuLaitBtn','CafeAuLaitQty','CafeAuLaitSubTotal');">
 Double $3.00</td>
-<td> <input type="text" id="CafeAuLaitQty" value="0" onblur="updateSubTotal('CafeAuLaitBtn','CafeAuLaitQty','CafeAuLaitSubTotal');" > </td>
-<td> <input type="text"  size = "5" value="0" id = "CafeAuLaitSubTotal" onfocus = "this.blur();"></td>
+<td> <input type="text" id="CafeAuLaitQty" value="0" onblur="updatePricings('CafeAuLaitBtn','CafeAuLaitQty','CafeAuLaitSubTotal');" > </td>
+<td> <input type="text"  size = "2" value="0" id = "CafeAuLaitSubTotal" onfocus = "this.blur();"></td>
 </tr>
 
 <tr id="IcedCappu">
 <td><strong>Iced Cappuccino</strong></td>
 <td>Sweetened espresso blened with icy-cold milk and served in a chilled glass.<br>
-<input type= "radio" name="IcedCappuBtn" value="4.75" onclick="updateSubTotal('IcedCappuBtn','IcedCappuQty','IcedCappuSubTotal');">
+<input type= "radio" name="IcedCappuBtn" value="4.75" onclick="updatePricings('IcedCappuBtn','IcedCappuQty','IcedCappuSubTotal');">
 Single $4.75
-<input type= "radio" name="IcedCappuBtn" value="5.75" onclick="updateSubTotal('IcedCappuBtn','IcedCappuQty','IcedCappuSubTotal');">
+<input type= "radio" name="IcedCappuBtn" value="5.75" onclick="updatePricings('IcedCappuBtn','IcedCappuQty','IcedCappuSubTotal');">
 Double $5.75</td>
-<td> <input type="text" id="IcedCappuQty" value="0" onblur="updateSubTotal('IcedCappuBtn','IcedCappuQty','IcedCappuSubTotal');" > </td>
-<td> <input type="text"  size = "5" value="0" id = "IcedCappuSubTotal" onfocus = "this.blur();"></td>
+<td> <input type="text" id="IcedCappuQty" value="0" onblur="updatePricings('IcedCappuBtn','IcedCappuQty','IcedCappuSubTotal');" > </td>
+<td> <input type="text"  size = "2" value="0" id = "IcedCappuSubTotal" onfocus = "this.blur();"></td>
 </tr>
 
 <tr>
 <td></td>  
 <td></td>
 <td>Total Price: </td>
-<td> <input type="text" size="5" id="totalPrice" value="0" onfocus="this.blur();"/> </td>
+<td> <input type="text" size="2" id="totalPrice" value="0" onfocus="this.blur();"/> </td>
 </tr>
 
 </table>
